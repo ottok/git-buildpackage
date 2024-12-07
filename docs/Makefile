@@ -104,4 +104,3 @@ po4a:
 
 langs: po4a
 	$(MAKE) -C _gen/de -f ../../Makefile.lang
-
