@@ -25,24 +25,24 @@
     <sect2 id="gbp.changelog.release">
       <title>Creating &changelog; just before the release</title>
       <para>
-	The simplest way is doing all the changes to the
-	<option>debian-branch</option> without touching
-	<filename>debian/changelog</filename> at all. Then, when done, do:
+  The simplest way is doing all the changes to the
+  <option>debian-branch</option> without touching
+  <filename>debian/changelog</filename> at all. Then, when done, do:
       </para>
 <programlisting>
 &gbp-dch; <option>--release</option>
 </programlisting>
       <para>
-	This will look up the latest released version in the changelog,
-	increment the version in the &debian; changelog, generate changelog
-	messages from the corresponding &git; commit id up to the branch head, and
-	finally spawns an editor for final changelog editing.
+  This will look up the latest released version in the changelog,
+  increment the version in the &debian; changelog, generate changelog
+  messages from the corresponding &git; commit id up to the branch head, and
+  finally spawns an editor for final changelog editing.
       </para>
     </sect2>
     <sect2 id="gbp.incremental.changelog">
       <title>Incrementally filling &changelog;</title>
       <para>
-	You can run &gbp-dch; without any options to make it add all
+  You can run &gbp-dch; without any options to make it add all
         commit messages since the last &debian; tag to a new UNRELEASED
         changelog section:
 <programlisting>

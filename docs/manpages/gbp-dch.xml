@@ -26,22 +26,22 @@
       <arg><option>--upstream-tag=</option><replaceable>tag-format</replaceable></arg>
       <arg><option>--ignore-branch</option></arg>
       <group>
-	<arg><option>-s</option> <replaceable>commit-ish</replaceable></arg>
+  <arg><option>-s</option> <replaceable>commit-ish</replaceable></arg>
         <arg><option>--since=</option><replaceable>commit-ish</replaceable></arg>
       </group>
       <group>
-	<group>
-	  <arg><option>-S</option></arg>
+  <group>
+    <arg><option>-S</option></arg>
           <arg><option>--snapshot</option></arg>
-	</group>
-	<group>
-	  <arg><option>-R</option></arg>
+  </group>
+  <group>
+    <arg><option>-R</option></arg>
           <arg><option>--release</option></arg>
-	</group>
+  </group>
       </group>
       <group>
-	<arg><option>-N</option> <replaceable>version</replaceable></arg>
-	<arg><option>--new-version=</option><replaceable>version</replaceable></arg>
+  <arg><option>-N</option> <replaceable>version</replaceable></arg>
+  <arg><option>--new-version=</option><replaceable>version</replaceable></arg>
       </group>
       <group>
         <arg><option>--bpo</option></arg>
@@ -54,8 +54,8 @@
       <arg><option>--distribution=</option><replaceable>name</replaceable></arg>
       <arg><option>--force-distribution</option></arg>
       <group>
-	<arg><option>-U</option> <replaceable>level</replaceable></arg>
-	<arg><option>--urgency=</option><replaceable>level</replaceable></arg>
+  <arg><option>-U</option> <replaceable>level</replaceable></arg>
+  <arg><option>--urgency=</option><replaceable>level</replaceable></arg>
       </group>
       <arg><option>--[no-]full</option></arg>
       <arg><option>--[no-]meta</option></arg>
@@ -70,8 +70,8 @@
       <arg><option>--spawn-editor=[always|never|snapshot|release]</option></arg>
       <arg><option>--commit-msg=</option><replaceable>msg-format</replaceable></arg>
       <group>
-	<arg><option>-c</option></arg>
-	<arg><option>--commit</option></arg>
+  <arg><option>-c</option></arg>
+  <arg><option>--commit</option></arg>
       </group>
       <arg><option>--customizations=</option><replaceable>customization-file</replaceable></arg>
       <arg><option>--postedit=</option><replaceable>COMMAND</replaceable></arg>
@@ -124,7 +124,7 @@
       use the <option>--git-log</option> option which is passed
       on verbatim to <command>git log</command>. E.g. by using
       <option>--git-log=</option><replaceable>"--author=Foo
-	Bar"</replaceable>.
+  Bar"</replaceable>.
     </para>
     <para>
       The above relies on the <option>--debian-branch</option> option
@@ -215,8 +215,8 @@
           <option>-a</option></term>
         <listitem>
           <para>
-	    This option is ignored for compatibility with older
-	    versions. It used to trigger automatic mode.
+      This option is ignored for compatibility with older
+      versions. It used to trigger automatic mode.
           </para>
         </listitem>
       </varlistentry>
@@ -285,12 +285,12 @@
             entry. The version number is being auto incremented with
             every new snapshot release.
           </para>
-	  <para>
-	    The snapshot banner is also used by &gbp-dch; to determine which
-	    entries are already in the changelog. This prevents duplicated
-	    entries in  <filename>debian/changelog</filename> when you did
-	    not commit the changelog yet.
-	  </para>
+    <para>
+      The snapshot banner is also used by &gbp-dch; to determine which
+      entries are already in the changelog. This prevents duplicated
+      entries in  <filename>debian/changelog</filename> when you did
+      not commit the changelog yet.
+    </para>
         </listitem>
       </varlistentry>
       <varlistentry>
@@ -533,10 +533,10 @@
         </term>
         <listitem>
           <para>
-	    Pass option to &dch; verbatim. Note that &gbp-dch; invokes &dch;
-	    multiple times and the option is passed to all invocations so not all
-	    &dch; options make sense here. Options may also conflict
-	    with options picked by &gbp-dch;.
+      Pass option to &dch; verbatim. Note that &gbp-dch; invokes &dch;
+      multiple times and the option is passed to all invocations so not all
+      &dch; options make sense here. Options may also conflict
+      with options picked by &gbp-dch;.
           </para>
         </listitem>
       </varlistentry>
@@ -578,8 +578,8 @@
     <variablelist>
       <varlistentry>
         <term>
-	  <option>Gbp-Dch</option>: <replaceable>action</replaceable>
-	</term>
+    <option>Gbp-Dch</option>: <replaceable>action</replaceable>
+  </term>
         <listitem>
           <para>
             Supported actions are: <replaceable>Ignore</replaceable>
@@ -592,10 +592,10 @@
             <replaceable>Full</replaceable> which will use the full
             commit message when generating the changelog entry (useful
             when <option>--full</option> is not given).
-	  </para>
-	  <para>
-	    In addition to <option>Gbp-Dch</option>, the
-	    deprecated <option>Git-Dch</option> is still supported.
+    </para>
+    <para>
+      In addition to <option>Gbp-Dch</option>, the
+      deprecated <option>Git-Dch</option> is still supported.
           </para>
         </listitem>
       </varlistentry>

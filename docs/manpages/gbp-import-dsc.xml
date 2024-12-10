@@ -149,11 +149,11 @@
           <replaceable>tag-format</replaceable> can be a pattern similar to
           what <option>--upstream-tag</option> supports.
           </para>
-	  <para>
-	    The default is to not add upstream tags as additional
-	    parents since this requires additional setup to have the upstream
-	    sources in the same repository.
-	  </para>
+    <para>
+      The default is to not add upstream tags as additional
+      parents since this requires additional setup to have the upstream
+      sources in the same repository.
+    </para>
         </listitem>
       </varlistentry>
       <varlistentry>
@@ -177,9 +177,9 @@
           upstream tarballs and the debian tarball of 3.0(quilt)
           packages. Note that the <emphasis>.diff.gz</emphasis> of 1.0
           source format packages is currently not filtered.
-	  </para>
-	  <para>
-	  This option can be given multiple times.
+    </para>
+    <para>
+    This option can be given multiple times.
           </para>
         </listitem>
       </varlistentry>
@@ -248,24 +248,24 @@
         </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--repo-user=</option><option>[GIT|DEBIAN]</option></term>
+  <term><option>--repo-user=</option><option>[GIT|DEBIAN]</option></term>
         <listitem>
           <para>
-	    When set to <option>DEBIAN</option>
-	    use the <envar>DEBFULLNAME</envar> environment variable to set the
-	    user.name &git; configuration otherwise use &git;'s
-	    defaults. Only affects newly created repos.
+      When set to <option>DEBIAN</option>
+      use the <envar>DEBFULLNAME</envar> environment variable to set the
+      user.name &git; configuration otherwise use &git;'s
+      defaults. Only affects newly created repos.
           </para>
         </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--repo-email=</option><option>[GIT|DEBIAN]</option></term>
+  <term><option>--repo-email=</option><option>[GIT|DEBIAN]</option></term>
         <listitem>
           <para>
-	    When set to <option>DEBIAN</option>
-	    use the <envar>DEBEMAIL</envar> environment variable to set the
-	    user.email &git; configuration otherwise use &git;'s
-	    defaults. Only affects newly created repos.
+      When set to <option>DEBIAN</option>
+      use the <envar>DEBEMAIL</envar> environment variable to set the
+      user.email &git; configuration otherwise use &git;'s
+      defaults. Only affects newly created repos.
           </para>
         </listitem>
       </varlistentry>

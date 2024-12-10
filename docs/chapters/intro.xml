@@ -16,20 +16,20 @@
       <listitem><para>Import new upstream versions from tarballs with optionally filters applied</para></listitem>
       <listitem><para>Recreate the upstream tarball from information stored in &git;</para></listitem>
       <listitem><para>Maintain a consistent branch and tag naming within a &git; repository, across
-	  repositories or across a team of developers</para></listitem>
+    repositories or across a team of developers</para></listitem>
       <listitem><para>Automatically sign generated tags</para></listitem>
       <listitem><para>Make sure you have committed all changes to the right
-	  branch before building and releasing</para>
+    branch before building and releasing</para>
       </listitem>
       <listitem><para>Execute hooks at various points of the package
-	  build process e.g. to automatically push changes to remote
-	  repositories</para>
+    build process e.g. to automatically push changes to remote
+    repositories</para>
       </listitem>
       <listitem><para>Integrate the build process with cowbuilder or other builders</para></listitem>
       <listitem><para>Export to a clean build area before building the package</para></listitem>
       <listitem><para>Generate <filename>debian/changelog</filename> automatically</para></listitem>
       <listitem><para>Manage your quilt patches when using 3.0 (quilt)
-	  source format</para></listitem>
+    source format</para></listitem>
       <listitem>
         <para>
           Pull changes from remote repositories like
@@ -47,102 +47,102 @@
     </para>
 
 <sect1 id="gbp.repository">
-	<title>Repository Layout and Terminology</title>
-	<para>It is recommended to have the &debian; packaging on a separate
-	branch than the upstream source <footnote><para>this, of course, has
-	no meaning for &debian; native packages</para></footnote>.
-	This is necessary to be able to import
-	and merge in new upstream versions via &gbp-import-orig;.
-	To distinguish these two branches, the following terminology
-	<footnote><para>corresponding to the command
-	line and config file options</para></footnote> is used:
-	</para>
-	<itemizedlist>
-	<listitem><para>The <option>debian-branch</option> (the default branch name
-	used in the &git; repository is <emphasis>master</emphasis> and in DEP-14
-	<emphasis>debian/latest</emphasis>) holds your current development work.
-	That's the branch you usually cut your releases from and the default branch
-	new upstream releases are merged onto.</para></listitem>
+  <title>Repository Layout and Terminology</title>
+  <para>It is recommended to have the &debian; packaging on a separate
+  branch than the upstream source <footnote><para>this, of course, has
+  no meaning for &debian; native packages</para></footnote>.
+  This is necessary to be able to import
+  and merge in new upstream versions via &gbp-import-orig;.
+  To distinguish these two branches, the following terminology
+  <footnote><para>corresponding to the command
+  line and config file options</para></footnote> is used:
+  </para>
+  <itemizedlist>
+  <listitem><para>The <option>debian-branch</option> (the default branch name
+  used in the &git; repository is <emphasis>master</emphasis> and in DEP-14
+  <emphasis>debian/latest</emphasis>) holds your current development work.
+  That's the branch you usually cut your releases from and the default branch
+  new upstream releases are merged onto.</para></listitem>
 
-	<listitem><para> The <option>upstream-branch</option> (the default branch name
-	used in the &git; repository is <emphasis>upstream</emphasis> and in DEP-14
-	<emphasis>upstream/latest</emphasis>) holds the upstream releases. Note that
-	this branch is to contain the upstream source code as it was at the time of
-	the upstream release, which was imported into Debian packaging. It is not
-	intended to point to the tip of the upstream development branch. The branch
-	contents is updated by extracting the upstream source tarball into it, or by
-	pulling from an upstream release tag.</para></listitem>
+  <listitem><para> The <option>upstream-branch</option> (the default branch name
+  used in the &git; repository is <emphasis>upstream</emphasis> and in DEP-14
+  <emphasis>upstream/latest</emphasis>) holds the upstream releases. Note that
+  this branch is to contain the upstream source code as it was at the time of
+  the upstream release, which was imported into Debian packaging. It is not
+  intended to point to the tip of the upstream development branch. The branch
+  contents is updated by extracting the upstream source tarball into it, or by
+  pulling from an upstream release tag.</para></listitem>
 
-	<listitem><para> The <option>pristine-tar branch</option> (the default
-	branch name used in the &git; repository is
-	<emphasis>pristine-tar</emphasis>) holds the necessary additional
-	information to recreate the original tarball from the
-	<option>upstream-branch</option>. In order to use this feature, you need
-	to install the &pristine-tar; package.</para></listitem>
+  <listitem><para> The <option>pristine-tar branch</option> (the default
+  branch name used in the &git; repository is
+  <emphasis>pristine-tar</emphasis>) holds the necessary additional
+  information to recreate the original tarball from the
+  <option>upstream-branch</option>. In order to use this feature, you need
+  to install the &pristine-tar; package.</para></listitem>
 
-	<listitem><para> There can be one or more <option>patch-queue</option> branches.
-	Every patch-queue branch is related to a
-	<option>debian-branch</option>. If the <option>debian-branch</option> is called
-	<emphasis>master</emphasis>, the corresponding patch-queue branch is
-	called <emphasis>patch-queue/master</emphasis>. The patch-queue branch is
-	the &debian; branch plus the contents of
-	<emphasis>debian/patches</emphasis> applied. These branches are managed
-	with &gbp-pq;.
-	</para></listitem>
-	</itemizedlist>
+  <listitem><para> There can be one or more <option>patch-queue</option> branches.
+  Every patch-queue branch is related to a
+  <option>debian-branch</option>. If the <option>debian-branch</option> is called
+  <emphasis>master</emphasis>, the corresponding patch-queue branch is
+  called <emphasis>patch-queue/master</emphasis>. The patch-queue branch is
+  the &debian; branch plus the contents of
+  <emphasis>debian/patches</emphasis> applied. These branches are managed
+  with &gbp-pq;.
+  </para></listitem>
+  </itemizedlist>
 
-	<para>You're completely
-	free to pick any repository layout; the branch names above are only
-	&gbp;'s defaults. They can be changed at any point in time,
-	and you can work with an arbitrary number of branches.
-	For example, branches like <emphasis>nmu</emphasis>,
-	<emphasis>backports</emphasis> or <emphasis>stable</emphasis> might
-	(temporarily or permanently) become your <option>debian-branch</option>,
-	and branches like <emphasis>dfsg</emphasis> or
-	<emphasis>snapshots</emphasis> might become your
-	<option>upstream-branch</option>&mdash;it doesn't matter if these branches
-	are maintained with &gbp-import-orig; or not.</para>
+  <para>You're completely
+  free to pick any repository layout; the branch names above are only
+  &gbp;'s defaults. They can be changed at any point in time,
+  and you can work with an arbitrary number of branches.
+  For example, branches like <emphasis>nmu</emphasis>,
+  <emphasis>backports</emphasis> or <emphasis>stable</emphasis> might
+  (temporarily or permanently) become your <option>debian-branch</option>,
+  and branches like <emphasis>dfsg</emphasis> or
+  <emphasis>snapshots</emphasis> might become your
+  <option>upstream-branch</option>&mdash;it doesn't matter if these branches
+  are maintained with &gbp-import-orig; or not.</para>
         <para>
         A flexible, recommended branch layout compatible with DEP-14 is
         described in the section <xref linkend="gbp.branch.naming"/>.
         </para>
-	<para>Since &gbp-buildpackage; only works with local &git;-repositories,
-	you have to use <command>git push</command> or <command>gbp
+  <para>Since &gbp-buildpackage; only works with local &git;-repositories,
+  you have to use <command>git push</command> or <command>gbp
         push</command>in order to publish your changes to remote repositories
         like <ulink
-	url="https://salsa.debian.org/">salsa.debian.org</ulink>; this can be
-	automated with &gbp-buildpackage;'s <option>post-tag</option>
-	hook.</para>
+  url="https://salsa.debian.org/">salsa.debian.org</ulink>; this can be
+  automated with &gbp-buildpackage;'s <option>post-tag</option>
+  hook.</para>
 </sect1>
 
 <sect1 id="gbp.workflow">
     <title>Workflow</title>
     <para>
-    	A typical, simple workflow consists of the following steps:
+      A typical, simple workflow consists of the following steps:
     </para>
     <orderedlist>
-	<listitem><para>Initially import a  &debian; package via &gbp-import-dsc;. This
-	imports the &debian; Package on the <option>debian-branch</option>
-	and the upstream sources on the <option>upstream-branch</option>.</para></listitem>
-	<listitem><para>Develop, test, commit changes. During this time, you can
-	always build the package with &gbp-buildpackage;. In case you have
-	uncommitted changes in your source tree, you can use the
-	<option>--git-ignore-new</option> option.</para></listitem>
-	<listitem><para>Optionally you can create the &debian; changelog entries
-	using &gbp-dch; and create snapshot releases for testing using its
-	<option>--snapshot</option> option.</para></listitem>
-	<listitem><para>Once satisfied, you can build the final package with
-	&gbp-buildpackage; <option>--git-tag</option>. This additionally
-	creates a tag within &git; so you can switch back to that version later
-	at any time. The format of the tags can be specified; tags can
-	be &gpg; signed.</para></listitem>
-	<listitem><para>When a new upstream version is released and upstream
-	isn't using &git;, you can import the new version via &gbp-import-orig;
-	onto the <option>upstream-branch</option>.  &gbp-import-orig; will
-	by default try to merge the new upstream version onto the
-	<option>debian-branch</option> (you can skip the merge with
-	<option>--no-merge</option>).  After resolving any potential conflicts,
-	go back to the second step.</para></listitem>
+  <listitem><para>Initially import a  &debian; package via &gbp-import-dsc;. This
+  imports the &debian; Package on the <option>debian-branch</option>
+  and the upstream sources on the <option>upstream-branch</option>.</para></listitem>
+  <listitem><para>Develop, test, commit changes. During this time, you can
+  always build the package with &gbp-buildpackage;. In case you have
+  uncommitted changes in your source tree, you can use the
+  <option>--git-ignore-new</option> option.</para></listitem>
+  <listitem><para>Optionally you can create the &debian; changelog entries
+  using &gbp-dch; and create snapshot releases for testing using its
+  <option>--snapshot</option> option.</para></listitem>
+  <listitem><para>Once satisfied, you can build the final package with
+  &gbp-buildpackage; <option>--git-tag</option>. This additionally
+  creates a tag within &git; so you can switch back to that version later
+  at any time. The format of the tags can be specified; tags can
+  be &gpg; signed.</para></listitem>
+  <listitem><para>When a new upstream version is released and upstream
+  isn't using &git;, you can import the new version via &gbp-import-orig;
+  onto the <option>upstream-branch</option>.  &gbp-import-orig; will
+  by default try to merge the new upstream version onto the
+  <option>debian-branch</option> (you can skip the merge with
+  <option>--no-merge</option>).  After resolving any potential conflicts,
+  go back to the second step.</para></listitem>
     </orderedlist>
     <para>These steps will be explained in more details in the following sections.</para>
 </sect1>

@@ -66,52 +66,52 @@
         <term><option>--remote-url-pattern</option>=<replaceable>pattern</replaceable>
         </term>
         <listitem>
-	  <para>Where to create the remote repository. The part
-	  <replaceable>%(pkg)s</replaceable> will be replaced by the package name.
-	  </para>
+    <para>Where to create the remote repository. The part
+    <replaceable>%(pkg)s</replaceable> will be replaced by the package name.
+    </para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>--remote-name</option>=<replaceable>name</replaceable>
         </term>
         <listitem>
-	  <para>What name git will use when referring to that repository, e.g.
-	  'origin'.</para>
+    <para>What name git will use when referring to that repository, e.g.
+    'origin'.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>--template-dir</option>=<replaceable>directory</replaceable>
         </term>
         <listitem>
-	  <para>Template directory to pass to <command>git init</command> on the remote
-	  side. This can be used to customize the remote repository, e.g. to set up hooks.
-	  </para>
+    <para>Template directory to pass to <command>git init</command> on the remote
+    side. This can be used to customize the remote repository, e.g. to set up hooks.
+    </para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>--remote-config</option>=<replaceable>config</replaceable>
         </term>
         <listitem>
-	  <para>Name of a config file section in <filename>gbp.conf</filename>
+    <para>Name of a config file section in <filename>gbp.conf</filename>
           that specifies the above parameters. See <xref linkend="man.gbp.conf"/>
           manpage for details.
-	  </para>
+    </para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>--debian-branch</option>=<replaceable>branch_name</replaceable>
         </term>
         <listitem>
-	  <para>The branch in the &git; repository the &debian; package is being
-	  developed on, default is <replaceable>master</replaceable>.</para>
+    <para>The branch in the &git; repository the &debian; package is being
+    developed on, default is <replaceable>master</replaceable>.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>--upstream-branch</option>=<replaceable>branch_name</replaceable>
         </term>
         <listitem>
-	  <para>The branch in the &git; repository the upstream sources are put
-	  onto. Default is <replaceable>upstream</replaceable>.</para>
+    <para>The branch in the &git; repository the upstream sources are put
+    onto. Default is <replaceable>upstream</replaceable>.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
@@ -125,16 +125,16 @@
         <term><option>--[no-]track</option>
         </term>
         <listitem>
-	  <para>Whether to set up branch tracking for the debian, upstream and
-	  pristine-tar branches.</para>
+    <para>Whether to set up branch tracking for the debian, upstream and
+    pristine-tar branches.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>--[no-]bare</option>
         </term>
         <listitem>
-	  <para>Whether the remote repository should be a bare
-	  repository (this is the default).</para>
+    <para>Whether the remote repository should be a bare
+    repository (this is the default).</para>
         </listitem>
       </varlistentry>
     </variablelist>

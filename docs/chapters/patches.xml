@@ -83,12 +83,12 @@
 
     <mediaobject>
       <imageobject>
-	<imagedata fileref="images/pq-unapplied.png" format="PNG"/>
-		   </imageobject>
+  <imagedata fileref="images/pq-unapplied.png" format="PNG"/>
+       </imageobject>
       <caption>
-	<para>
-	  The &debian-branch; we start from.
-	</para>
+  <para>
+    The &debian-branch; we start from.
+  </para>
       </caption>
     </mediaobject>
 
@@ -119,8 +119,8 @@
     </imageobject>
     <caption>
       <para>
-	The patch-queue branch with patches
-	from <filename>debian/patches</filename> applied.
+  The patch-queue branch with patches
+  from <filename>debian/patches</filename> applied.
       </para>
     </caption>
   </mediaobject>
@@ -131,17 +131,17 @@
   <itemizedlist>
     <listitem>
       <para>
-	To add what will later become a patch
-	in <filename>debian/patches/</filename> simply make a
-	commit. The first line of the commit message will become the
-	patch name later.  The following lines include the details of
-	what the patch does.
+  To add what will later become a patch
+  in <filename>debian/patches/</filename> simply make a
+  commit. The first line of the commit message will become the
+  patch name later.  The following lines include the details of
+  what the patch does.
       </para>
     </listitem>
     <listitem>
       <para>
-	To remove or edit commits use git rebase -i . The git
-	documentation explains how to work with git-rebase.
+  To remove or edit commits use git rebase -i . The git
+  documentation explains how to work with git-rebase.
       </para>
     </listitem>
   </itemizedlist>
@@ -186,30 +186,30 @@
   <orderedlist>
     <listitem>
       <para>
-	Imports the current patches onto the patch-queue branch (if
-	not done already) using &gbp-pq-import;. This will allow you
-	to rebase the patches on the new upstream version later.
+  Imports the current patches onto the patch-queue branch (if
+  not done already) using &gbp-pq-import;. This will allow you
+  to rebase the patches on the new upstream version later.
       </para>
     </listitem>
     <listitem>
       <para>
-	Imports the new upstream version with
-	&gbp-import-orig; <option>--uscan</option>.
+  Imports the new upstream version with
+  &gbp-import-orig; <option>--uscan</option>.
       </para>
     </listitem>
     <listitem>
       <para>
-	Rebases the patches onto the new upstream version using
-	&gbp-pq-rebase;. This will bring the patches up to date
-	regarding the new upstream version. Patches already applied
-	upstream can be dropped and remaining patches can be modified
-	to apply to the new version.
+  Rebases the patches onto the new upstream version using
+  &gbp-pq-rebase;. This will bring the patches up to date
+  regarding the new upstream version. Patches already applied
+  upstream can be dropped and remaining patches can be modified
+  to apply to the new version.
       </para>
     </listitem>
     <listitem>
       <para>
-	Exports the patches to <filename>debian/patches</filename> using
-	&gbp-pq-export;.
+  Exports the patches to <filename>debian/patches</filename> using
+  &gbp-pq-export;.
       </para>
     </listitem>
   </orderedlist>
@@ -246,11 +246,11 @@
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/pq-time-machine.png" format="PNG"/>
-		 </imageobject>
+     </imageobject>
     <caption>
       <para>
-	The patch-queue branch and &debian-branch; after importing the
-	patches.
+  The patch-queue branch and &debian-branch; after importing the
+  patches.
       </para>
     </caption>
   </mediaobject>
@@ -278,11 +278,11 @@
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/pq-rebase.png" format="PNG"/>
-		 </imageobject>
+     </imageobject>
     <caption>
       <para>
-	The patch-queue branch after rebasing the patches. Patches
-	that were merged upstream were dropped.
+  The patch-queue branch after rebasing the patches. Patches
+  that were merged upstream were dropped.
       </para>
     </caption>
   </mediaobject>
@@ -300,10 +300,10 @@
   <mediaobject>
     <imageobject>
       <imagedata fileref="images/pq-export.png" format="PNG"/>
-		 </imageobject>
+     </imageobject>
     <caption>
       <para>
-	The &debian-branch; after exporting the patches and committing the changes.
+  The &debian-branch; after exporting the patches and committing the changes.
       </para>
     </caption>
   </mediaobject>
@@ -325,7 +325,7 @@
   <orderedlist>
     <listitem>
       <para>Launch an import. If there's nothing to import &gbp-pq; will just
-	create an empty branch and switch your working copy to it:
+  create an empty branch and switch your working copy to it:
 <programlisting>
   &gbp-pq-import;
 </programlisting>
@@ -333,13 +333,13 @@
     </listitem>
     <listitem>
       <para>
-	Create your first patch: edit files, test, commit your changes
-	using <command>git commit</command>
+  Create your first patch: edit files, test, commit your changes
+  using <command>git commit</command>
       </para>
     </listitem>
     <listitem>
       <para>
-	To generate the new Quilt patch set use
+  To generate the new Quilt patch set use
       </para>
 <programlisting>
   &gbp-pq-export; --commit

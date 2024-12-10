@@ -58,14 +58,14 @@
         <term><option>--debsnap</option>
         </term>
         <listitem>
-	  <para>Fetch snapshots from snapshots.debian.org using debsnap.</para>
+    <para>Fetch snapshots from snapshots.debian.org using debsnap.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>--ignore-repo-config</option>
         </term>
         <listitem>
-	  <para>Ignore <filename>gbp.conf</filename> files stored in the git
+    <para>Ignore <filename>gbp.conf</filename> files stored in the git
 repository itself. This can be useful to ignore branch information and other
 options shipped in the package source.</para>
         </listitem>

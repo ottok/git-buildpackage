@@ -152,11 +152,11 @@
     <refsect2>
       <title>Upstream tarball creation options</title>
       <para>When &gbp-buildpackage; doesn't find a suitable upstream
-	tarball it will create one either using &pristine-tar;
-	or <command>git archive</command>. These options determine how the tarball is created:
+  tarball it will create one either using &pristine-tar;
+  or <command>git archive</command>. These options determine how the tarball is created:
       </para>
       <variablelist>
-	<varlistentry>
+  <varlistentry>
           <term><option>--git-pristine-tar</option>
           </term>
           <listitem>
@@ -167,22 +167,22 @@
               options have no effect when creating tarballs.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-upstream-tag=</option><replaceable>TAG-FORMAT</replaceable>
           </term>
           <listitem>
             <para>
               Use this tag format when looking for tags of upstream
-	      versions to build the upstream tarballs.  Default
-	      is <replaceable>upstream/%(version)s</replaceable>. This
-	      must be set correctly if you don't want to pass any
-	      other options. The default matches what
-	      &gbp-import-orig; uses to create tags.
+        versions to build the upstream tarballs.  Default
+        is <replaceable>upstream/%(version)s</replaceable>. This
+        must be set correctly if you don't want to pass any
+        other options. The default matches what
+        &gbp-import-orig; uses to create tags.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-upstream-tree=</option><replaceable>[BRANCH|SLOPPY|TAG|TREEISH]</replaceable>
           </term>
           <listitem>
@@ -192,20 +192,20 @@
               version in the changelog. <replaceable>BRANCH</replaceable> looks at
               the upstream branch given via the
               <option>--git-upstream-branch</option> option. The <replaceable>SLOPPY</replaceable>
-	      option looks at the debian branch given via
-	      the <option>--git-debian-branch</option> and drops
-	      the <filename>debian/</filename> dir.
-	    </para>
-	    <para>
-	      Other values are interpreted as treeishs.
+        option looks at the debian branch given via
+        the <option>--git-debian-branch</option> and drops
+        the <filename>debian/</filename> dir.
+      </para>
+      <para>
+        Other values are interpreted as treeishs.
             </para>
             <para>
               This doesn't have any effect if <option>--git-pristine-tar</option>
               is being used.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-upstream-branch</option>=<replaceable>BRANCH_NAME</replaceable>
           </term>
           <listitem>
@@ -216,8 +216,8 @@
               <replaceable>upstream</replaceable>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-tarball-dir=</option><replaceable>DIRECTORY</replaceable>
           </term>
           <listitem>
@@ -229,8 +229,8 @@
               substitution pattern, eg: <replaceable>foo-%(version)s</replaceable>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-component=</option><replaceable>COMPONENT</replaceable>
           </term>
           <listitem>
@@ -248,8 +248,8 @@
               change incompatibly.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-pristine-tar-commit</option>
           </term>
           <listitem>
@@ -258,8 +258,8 @@
               tarball was generated and the pristine-tar data isn't already there.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-force-create</option>
           </term>
           <listitem>
@@ -268,8 +268,8 @@
               present).
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-no-create-orig</option>
           </term>
           <listitem>
@@ -278,8 +278,8 @@
               symlinks to existing tarballs in <option>tarball-dir</option>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-upstream-signatures=</option>[auto|on|off]
           </term>
           <listitem>
@@ -287,17 +287,17 @@
               Whether to export the upstream tarball with signatures.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-[no-]submodules</option>
           </term>
           <listitem>
             <para>
-	      Include &git; submodules in the orig tarball if present.
+        Include &git; submodules in the orig tarball if present.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-compression=</option><replaceable>TYPE</replaceable>
           </term>
           <listitem>
@@ -311,8 +311,8 @@
               <replaceable>xz</replaceable>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-compression-level=</option><replaceable>LEVEL</replaceable>
           </term>
           <listitem>
@@ -321,29 +321,29 @@
               tarball needs to be built.
             </para>
           </listitem>
-	</varlistentry>
+  </varlistentry>
       </variablelist>
     </refsect2>
     <refsect2>
       <title>Package build options</title>
       <para>&gbp-buildpackage; can invoke different types of builders
-	to produce the source and binary packages. These options
-	determine which builder is invoked and how.
+  to produce the source and binary packages. These options
+  determine which builder is invoked and how.
       </para>
       <variablelist>
-	<varlistentry>
+  <varlistentry>
           <term><option>--git-builder=<replaceable>BUILD_CMD</replaceable></option>
           </term>
           <listitem>
             <para>
               Use <replaceable>BUILD_CMD</replaceable> instead of
               <command>debuild -i -I</command>. If you want to use
-	      &cowbuilder; or &pbuilder; see
-	      the <option>--git-pbuilder</option>.
+        &cowbuilder; or &pbuilder; see
+        the <option>--git-pbuilder</option>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-cleaner=<replaceable>CLEAN_CMD</replaceable></option>
           </term>
           <listitem>
@@ -353,8 +353,8 @@
               is <command>/bin/true</command> (no cleaning).
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-pbuilder</option>
           </term>
           <listitem>
@@ -365,8 +365,8 @@
               <option>--git-cleaner</option> options.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-qemubuilder</option>
           </term>
           <listitem>
@@ -377,8 +377,8 @@
               options.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-dist=<replaceable>DIST</replaceable></option>
           </term>
           <listitem>
@@ -401,8 +401,8 @@
               to <replaceable>downstream_sid</replaceable>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-arch=<replaceable>ARCH</replaceable></option>
           </term>
           <listitem>
@@ -415,8 +415,8 @@
               to <command>git-pbuilder</command>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-pbuilder-autoconf</option>
           </term>
           <listitem>
@@ -428,8 +428,8 @@
               or the corresponding configuration file options).
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-pbuilder-options</option>
           </term>
           <listitem>
@@ -441,23 +441,23 @@
               variable to pass options to &git-pbuilder;.
             </para>
             <para>
-	      As an example, to tell pbuilder to use an alternate
+        As an example, to tell pbuilder to use an alternate
               .pbuilderrc file, you may run &gbp-buildpackage; with
               <option>--git-pbuilder-options=<replaceable>"--configfile
-		  /tmp/my/pbuilderrc"</replaceable></option>. See
-	      <citerefentry>
-		<refentrytitle>pbuilder</refentrytitle>
-		<manvolnum>8</manvolnum>
-	      </citerefentry>
-	      for more options to pass through here.
+      /tmp/my/pbuilderrc"</replaceable></option>. See
+        <citerefentry>
+    <refentrytitle>pbuilder</refentrytitle>
+    <manvolnum>8</manvolnum>
+        </citerefentry>
+        for more options to pass through here.
             </para>
             <para>
               If unset the <envar>GIT_PBUILDER_OPTIONS</envar> environment
               variable will be left untouched.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-notify=</option>[auto|on|off]
           </term>
           <listitem>
@@ -466,17 +466,17 @@
               build. This needs python3-notify2 installed.
             </para>
           </listitem>
-	</varlistentry>
+  </varlistentry>
       </variablelist>
     </refsect2>
     <refsect2>
       <title>Hook options</title>
       <para>
-	Hooks allow you to run arbitrary commands at different stages of the
-	build. These options configure what will be run:
+  Hooks allow you to run arbitrary commands at different stages of the
+  build. These options configure what will be run:
       </para>
       <variablelist>
-	<varlistentry>
+  <varlistentry>
           <term><option>--git-preexport=</option><replaceable>COMMAND</replaceable>
           </term>
           <listitem>
@@ -490,8 +490,8 @@
               <envar>GBP_BUILD_DIR</envar> (the build dir).
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-postexport=</option><replaceable>COMMAND</replaceable>
           </term>
           <listitem>
@@ -508,8 +508,8 @@
               have been initially exported).
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-prebuild=</option><replaceable>COMMAND</replaceable>
           </term>
           <listitem>
@@ -524,8 +524,8 @@
               <envar>GBP_BUILD_DIR</envar> (the build dir).
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-postbuild=</option><replaceable>COMMAND</replaceable>
           </term>
           <listitem>
@@ -540,8 +540,8 @@
               <envar>GBP_BUILD_DIR</envar> (the build dir).
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-posttag=</option><replaceable>COMMAND</replaceable>
           </term>
           <listitem>
@@ -557,8 +557,8 @@
               commit the tag was created at).
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-[no-]hooks</option>
           </term>
           <listitem>
@@ -568,13 +568,13 @@
               not affected by this option.
             </para>
           </listitem>
-	</varlistentry>
+  </varlistentry>
       </variablelist>
     </refsect2>
     <refsect2>
       <title>Tagging options</title>
       <variablelist>
-	<varlistentry>
+  <varlistentry>
           <term><option>--git-tag</option>
           </term>
           <listitem>
@@ -589,8 +589,8 @@
               specified via &gbp.conf;.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-[no-]sign-tags</option>
           </term>
           <listitem>
@@ -598,8 +598,8 @@
               GPG sign all created tags.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-keyid=</option><replaceable>GPG-KEYID</replaceable>
           </term>
           <listitem>
@@ -607,8 +607,8 @@
               Use this keyid for gpg signing tags.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-debian-tag=</option><replaceable>TAG-FORMAT</replaceable>
           </term>
           <listitem>
@@ -617,16 +617,16 @@
               <replaceable>debian/%(version)s</replaceable>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-debian-tag-msg=</option><replaceable>tag-msg-format</replaceable>
           </term>
           <listitem>
             <para>Use this tag message format when signing &debian; versions,
               default is <replaceable>%(pkg)s Debian release %(version)s</replaceable></para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-retag</option>
           </term>
           <listitem>
@@ -636,8 +636,8 @@
               cannot be specified via &gbp.conf;.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-tag-only</option>
           </term>
           <listitem>
@@ -647,18 +647,18 @@
               &gbp.conf;.
             </para>
           </listitem>
-	</varlistentry>
+  </varlistentry>
       </variablelist>
     </refsect2>
     <refsect2>
       <title>Build area options</title>
       <para>
-	&gbp-buildpackage; can export the source tree to a different
-	build-area before performing the build. This options specify
-	if and how this is done:
+  &gbp-buildpackage; can export the source tree to a different
+  build-area before performing the build. This options specify
+  if and how this is done:
       </para>
       <variablelist>
-	<varlistentry>
+  <varlistentry>
           <term><option>--git-export-dir=</option><replaceable>DIRECTORY</replaceable>
           </term>
           <listitem>
@@ -669,8 +669,8 @@
               exported before starting the build.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-export=</option><replaceable>TREEISH</replaceable>
           </term>
           <listitem>
@@ -689,19 +689,19 @@
               enforcing any branch or modification checks.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git[-no]-purge</option>
           </term>
           <listitem>
             <para>
               Purge (remove) temporary build area after build. This is
-	      the default but it can be turned off for e.g. debugging
-	      purposes.
+        the default but it can be turned off for e.g. debugging
+        purposes.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-[no-]overlay</option>
           </term>
           <listitem>
@@ -712,23 +712,23 @@
               contained in the upstream tarball in case of 2.0 and 3.0
               source formats.
             </para>
-	    <para>
-	      This option allows one to keep only the debian/ dir in the version
-	      control system.
-	    </para>
+      <para>
+        This option allows one to keep only the debian/ dir in the version
+        control system.
+      </para>
           </listitem>
-	</varlistentry>
+  </varlistentry>
       </variablelist>
     </refsect2>
     <refsect2>
       <title>Safety options</title>
       <para>
-	In order to make sure what you build is what you upload
-	&gbp-buildpackage; performs several safety checks. These
-	options allow one to configure and disable them:
+  In order to make sure what you build is what you upload
+  &gbp-buildpackage; performs several safety checks. These
+  options allow one to configure and disable them:
       </para>
       <variablelist>
-	<varlistentry>
+  <varlistentry>
           <term><option>--git-debian-branch</option>=<replaceable>BRANCH_NAME</replaceable>
           </term>
           <listitem>
@@ -740,8 +740,8 @@
               <option>--git-ignore-new</option>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-ignore-branch</option>
           </term>
           <listitem>
@@ -750,8 +750,8 @@
               <replaceable>DEBIAN-BRANCH</replaceable>.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-[no-]ignore-new</option>
           </term>
           <listitem>
@@ -761,13 +761,13 @@
               <replaceable>DEBIAN-BRANCH</replaceable>.
             </para>
           </listitem>
-	</varlistentry>
+  </varlistentry>
       </variablelist>
     </refsect2>
     <refsect2>
       <title>Color and verbosity options</title>
       <variablelist>
-	<varlistentry>
+  <varlistentry>
           <term><option>--git-verbose</option>
           </term>
           <listitem>
@@ -775,8 +775,8 @@
               Verbose execution. Useful for debugging and bug reports.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-color=</option>[auto|on|off]
           </term>
           <listitem>
@@ -784,8 +784,8 @@
               Whether to use colored output.
             </para>
           </listitem>
-	</varlistentry>
-	<varlistentry>
+  </varlistentry>
+  <varlistentry>
           <term><option>--git-color-scheme</option>=<replaceable>COLOR_SCHEME</replaceable>
           </term>
           <listitem>
@@ -799,7 +799,7 @@
               in default (i.e. warning and error messages in red).
             </para>
           </listitem>
-	</varlistentry>
+  </varlistentry>
       </variablelist>
     </refsect2>
   </refsect1>
@@ -848,20 +848,20 @@
       <xref linkend="man.gbp.import.orig"/>,
       <xref linkend="man.gbp.dch"/>,
       <citerefentry>
-	<refentrytitle>git-pbuilder</refentrytitle>
-	<manvolnum>1</manvolnum>
+  <refentrytitle>git-pbuilder</refentrytitle>
+  <manvolnum>1</manvolnum>
       </citerefentry>,
       <citerefentry>
-	<refentrytitle>cowbuilder</refentrytitle>
-	<manvolnum>8</manvolnum>
+  <refentrytitle>cowbuilder</refentrytitle>
+  <manvolnum>8</manvolnum>
       </citerefentry>,
       <citerefentry>
-	<refentrytitle>dpkg-source</refentrytitle>
-	<manvolnum>1</manvolnum>
+  <refentrytitle>dpkg-source</refentrytitle>
+  <manvolnum>1</manvolnum>
       </citerefentry>,
       <citerefentry>
-	<refentrytitle>git-submodule</refentrytitle>
-	<manvolnum>1</manvolnum>
+  <refentrytitle>git-submodule</refentrytitle>
+  <manvolnum>1</manvolnum>
       </citerefentry>,
       <xref linkend="man.gbp.conf"/>,
       &man.seealso.common;

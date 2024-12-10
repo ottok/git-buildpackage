@@ -76,20 +76,20 @@
         </term>
         <listitem>
           <para>
-	    When creating the pristine-tar commits also look for an additional tarball
-	    with component name <replaceable>COMPONENT</replaceable>. E.g. in
-	    <filename>hello-debhelper_1.0.orig-foo.tar.gz</filename>
-	    the component name would be <replaceable>foo</replaceable>. The additional
-	    tarball is expected to be in the same directory than the upstream tarball
-	    and to use the same compression type. This option can be
-	    given multiple times to add multiple additional tarballs.
-	  </para>
-	  <para>
-	    Using additional original tarballs is a feature of the 3.0
-	    (quilt) source format. See
-	    the <command>dpkg-source</command> manpage for
-	    details. This is currently considered an experimental
-	    feature and might change incompatibly.
+      When creating the pristine-tar commits also look for an additional tarball
+      with component name <replaceable>COMPONENT</replaceable>. E.g. in
+      <filename>hello-debhelper_1.0.orig-foo.tar.gz</filename>
+      the component name would be <replaceable>foo</replaceable>. The additional
+      tarball is expected to be in the same directory than the upstream tarball
+      and to use the same compression type. This option can be
+      given multiple times to add multiple additional tarballs.
+    </para>
+    <para>
+      Using additional original tarballs is a feature of the 3.0
+      (quilt) source format. See
+      the <command>dpkg-source</command> manpage for
+      details. This is currently considered an experimental
+      feature and might change incompatibly.
           </para>
         </listitem>
       </varlistentry>

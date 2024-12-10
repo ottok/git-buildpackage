@@ -58,24 +58,24 @@
         <term><option>--all</option>
         </term>
         <listitem>
-	  <para>Track all branches, not only <replaceable>debian</replaceable>
-	  and <replaceable>upstream</replaceable>.</para>
+    <para>Track all branches, not only <replaceable>debian</replaceable>
+    and <replaceable>upstream</replaceable>.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>--debian-branch</option>=<replaceable>branch_name</replaceable>
         </term>
         <listitem>
-	  <para>The branch in the Git repository the Debian package is being
-	  developed on, default is <replaceable>master</replaceable>.</para>
+    <para>The branch in the Git repository the Debian package is being
+    developed on, default is <replaceable>master</replaceable>.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>--upstream-branch</option>=<replaceable>branch_name</replaceable>
         </term>
         <listitem>
-	  <para>The branch in the &git; repository the upstream sources are put
-	  onto. Default is <replaceable>upstream</replaceable>.</para>
+    <para>The branch in the &git; repository the upstream sources are put
+    onto. Default is <replaceable>upstream</replaceable>.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
@@ -100,16 +100,16 @@
         </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--[no-]hooks</option></term>
-	<listitem>
+  <term><option>--[no-]hooks</option></term>
+  <listitem>
           <para>
             Enable running hooks.
           </para>
-	</listitem>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--postclone=</option><replaceable>COMMAND</replaceable></term>
-	<listitem>
+  <term><option>--postclone=</option><replaceable>COMMAND</replaceable></term>
+  <listitem>
           <para>
             Execute <replaceable>COMMAND</replaceable> after cloning the source
             from the remote.
@@ -118,16 +118,16 @@
             Exported environment variables are: <envar>GBP_GIT_DIR</envar> (the
             repository the package is being built from).
           </para>
-	  <para>Note that if you clone a repository that contains a
-	    hook configuration in <filename>debian/gbp.conf</filename>
-	    this hook will not be run automatically to prevent execution
-	    of untrusted code.
-	  </para>
-	</listitem>
+    <para>Note that if you clone a repository that contains a
+      hook configuration in <filename>debian/gbp.conf</filename>
+      this hook will not be run automatically to prevent execution
+      of untrusted code.
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--defuse-gitattributes=</option><option>[auto|on|off]</option></term>
-	<listitem>
+  <term><option>--defuse-gitattributes=</option><option>[auto|on|off]</option></term>
+  <listitem>
           <para>
             Disable Git attributes that may interfere with building packages. Works
             by updating <filename>.git/info/attributes</filename> to override attributes
@@ -144,27 +144,27 @@
             unconditionally there are some. If set to <replaceable>off</replaceable>,
             does nothing.
           </para>
-	</listitem>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--repo-email=</option><option>[GIT|DEBIAN]</option></term>
+  <term><option>--repo-email=</option><option>[GIT|DEBIAN]</option></term>
         <listitem>
           <para>
-	    When set to <option>DEBIAN</option>
-	    use the <envar>DEBEMAIL</envar> environment variable to set the
-	    user.email &git; configuration otherwise use &git;'s
-	    defaults.
+      When set to <option>DEBIAN</option>
+      use the <envar>DEBEMAIL</envar> environment variable to set the
+      user.email &git; configuration otherwise use &git;'s
+      defaults.
           </para>
         </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--repo-user=</option><option>[GIT|DEBIAN]</option></term>
+  <term><option>--repo-user=</option><option>[GIT|DEBIAN]</option></term>
         <listitem>
           <para>
-	    When set to <option>DEBIAN</option>
-	    use the <envar>DEBFULLNAME</envar> environment variable to set the
-	    user.name &git; configuration otherwise use &git;'s
-	    defaults.
+      When set to <option>DEBIAN</option>
+      use the <envar>DEBFULLNAME</envar> environment variable to set the
+      user.name &git; configuration otherwise use &git;'s
+      defaults.
           </para>
         </listitem>
       </varlistentry>
@@ -173,7 +173,7 @@
         </term>
         <listitem>
           <para>
-	    Whether to expand gbp specific aliases for remote repos like <symbol>salsa:</symbol>.
+      Whether to expand gbp specific aliases for remote repos like <symbol>salsa:</symbol>.
           </para>
         </listitem>
       </varlistentry>
@@ -182,28 +182,28 @@
         </term>
         <listitem>
           <para>
-	    Whether to add the upstream git repository as additional remote. The repository url is read from
-	    the "Repository" field in
+      Whether to add the upstream git repository as additional remote. The repository url is read from
+      the "Repository" field in
             <filename>debian/upstream/metadata</filename>.
           </para>
         </listitem>
       </varlistentry>
       <varlistentry>
-	<term><replaceable>repository</replaceable></term>
-	<listitem>
+  <term><replaceable>repository</replaceable></term>
+  <listitem>
           <para>
-	    The (possibly remote) repository to clone from. This is
-	    usually a &git; URL but some shortcuts are supported (see below).
+      The (possibly remote) repository to clone from. This is
+      usually a &git; URL but some shortcuts are supported (see below).
           </para>
-	</listitem>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><replaceable>directory</replaceable></term>
-	<listitem>
+  <term><replaceable>directory</replaceable></term>
+  <listitem>
           <para>
-	    The directory to clone to.
+      The directory to clone to.
           </para>
-	</listitem>
+  </listitem>
       </varlistentry>
     </variablelist>
   </refsect1>

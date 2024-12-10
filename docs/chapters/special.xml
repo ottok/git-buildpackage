@@ -107,29 +107,29 @@ pbuilder = True
 EOF
 </programlisting>
       <para>
-	<command>git-pbuilder</command> defaults to building a package for the
-	<envar>sid</envar> distribution. If you want to build for another
-	distribution, pass this in the <option>--git-dist</option> option:
+  <command>git-pbuilder</command> defaults to building a package for the
+  <envar>sid</envar> distribution. If you want to build for another
+  distribution, pass this in the <option>--git-dist</option> option:
 
 <programlisting>
   &gbp-buildpackage; --git-pbuilder --git-dist=jessie
 </programlisting>
 
-	If you want to use <command>debuild</command> again (without
-	modifying <filename>~/.gbp.conf</filename>), you can use:
+  If you want to use <command>debuild</command> again (without
+  modifying <filename>~/.gbp.conf</filename>), you can use:
       </para>
 <programlisting>
   &gbp-buildpackage; --git-no-pbuilder
 </programlisting>
       <para>
-	In order for all of the above to work you have to create a
-	base chroot first using &git-pbuilder;:
+  In order for all of the above to work you have to create a
+  base chroot first using &git-pbuilder;:
       </para>
 <programlisting>
   <command>git-pbuilder</command> create
 </programlisting>
       <para>
-	This can later be updated using:
+  This can later be updated using:
       </para>
 <programlisting>
   <command>git-pbuilder</command> update
@@ -234,17 +234,17 @@ means.
     <sect1 id="gbp.special.pk4">
       <title>Integrating with pk4</title>
       <para>
-	&pk4; provides an easy way to fetch the sources of packages
-	currently installed on the system. In order to let pk4 provide
-	these packages as &git; repositories you can enable &gbp;'s
-	unpack hook:
+  &pk4; provides an easy way to fetch the sources of packages
+  currently installed on the system. In order to let pk4 provide
+  these packages as &git; repositories you can enable &gbp;'s
+  unpack hook:
       </para>
       <programlisting>
 mkdir -p ~/.config/pk4/hooks-enabled/unpack/
 ln -s /usr/share/pk4/hooks-available/unpack/gbp ~/.config/pk4/hooks-enabled/unpack/
       </programlisting>
       <para>
-	This will make sure packages are imported into a git repository after download.
+  This will make sure packages are imported into a git repository after download.
       </para>
     </sect1>
 </chapter>

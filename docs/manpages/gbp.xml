@@ -20,10 +20,10 @@
     <cmdsynopsis>
       &gbp;
       <group choice='req'>
-	<arg><option>--help</option></arg>
-	<arg><option>--version</option></arg>
-	<arg><option>--list-cmds</option></arg>
-	<arg><option>command</option><arg choice='opt' rep='repeat'><option>args</option></arg></arg>
+  <arg><option>--help</option></arg>
+  <arg><option>--version</option></arg>
+  <arg><option>--list-cmds</option></arg>
+  <arg><option>command</option><arg choice='opt' rep='repeat'><option>args</option></arg></arg>
       </group>
     </cmdsynopsis>
   </refsynopsisdiv>
@@ -110,7 +110,7 @@
         </term>
         <listitem>
           <para>Import several &debian; source packages into a &git; repository, sorted
-	  by version number</para>
+    by version number</para>
         </listitem>
       </varlistentry>
     </variablelist>

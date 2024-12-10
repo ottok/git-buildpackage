@@ -48,34 +48,34 @@
       </listitem>
       <listitem>
         <para>
-	  Determine the debian tag from <filename>debian/changelog</filename>
-	  and add it the list of things to push if the changelog does not indicate
-	  an unreleased package.
+    Determine the debian tag from <filename>debian/changelog</filename>
+    and add it the list of things to push if the changelog does not indicate
+    an unreleased package.
         </para>
       </listitem>
       <listitem>
         <para>
-	  Determine the upstream tag from <filename>debian/changelog</filename>
-	  and add it to the list of things to push if it's not a native package.
+    Determine the upstream tag from <filename>debian/changelog</filename>
+    and add it to the list of things to push if it's not a native package.
         </para>
       </listitem>
       <listitem>
         <para>
-	  Determine if the tags correspond to the branch tips of the corresponding
-	  upstream and debian branches. If so, these branches will be added to the list
-	  of things to push. If not the changes will only be pushed up to the commit
-	  that is referenced by the corresponding tag.
+    Determine if the tags correspond to the branch tips of the corresponding
+    upstream and debian branches. If so, these branches will be added to the list
+    of things to push. If not the changes will only be pushed up to the commit
+    that is referenced by the corresponding tag.
         </para>
       </listitem>
       <listitem>
         <para>
-	  Determine if the pristine-tar branch needs to be pushed and if so adds it
-	  to the list of things to push.
+    Determine if the pristine-tar branch needs to be pushed and if so adds it
+    to the list of things to push.
         </para>
       </listitem>
       <listitem>
         <para>
-	  Finally, if not in dry-run mode, pushes the above changes to the remote side.
+    Finally, if not in dry-run mode, pushes the above changes to the remote side.
         </para>
       </listitem>
       </itemizedlist>
@@ -94,65 +94,65 @@
         <term><option>--ignore-branch</option></term>
         <listitem>
           <para>
-	    Don't fail if the &debian-branch; does not match the currently checked out
-	    branch and push the current branch instead.
+      Don't fail if the &debian-branch; does not match the currently checked out
+      branch and push the current branch instead.
           </para>
         </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--debian-branch</option>=<replaceable>branch_name</replaceable></term>
-	<listitem>
-	  <para>
-	    The branch in the Git repository the Debian package is being
-	    developed on. If set to the empty value the branch will not be pushed.
-	  </para>
-	</listitem>
+  <term><option>--debian-branch</option>=<replaceable>branch_name</replaceable></term>
+  <listitem>
+    <para>
+      The branch in the Git repository the Debian package is being
+      developed on. If set to the empty value the branch will not be pushed.
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--debian-tag=</option><replaceable>TAG-FORMAT</replaceable></term>
-	<listitem>
-	  <para>
-	    Use this tag format when looking for tags corresponding to a &debian;
-	    version. Default is <replaceable>debian/%(version)s</replaceable>.
-	    If set to the empty value the tag will not be pushed but gbp will
-	    push the tip of the &debian-branch;.
-	  </para>
-	</listitem>
+  <term><option>--debian-tag=</option><replaceable>TAG-FORMAT</replaceable></term>
+  <listitem>
+    <para>
+      Use this tag format when looking for tags corresponding to a &debian;
+      version. Default is <replaceable>debian/%(version)s</replaceable>.
+      If set to the empty value the tag will not be pushed but gbp will
+      push the tip of the &debian-branch;.
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--upstream-branch</option>=<replaceable>branch_name</replaceable></term>
-	<listitem>
-	  <para>
-	    The branch in the &git; repository the upstream sources are put
-	    onto. If set to the empty value the branch will not be pushed.
-	  </para>
-	</listitem>
+  <term><option>--upstream-branch</option>=<replaceable>branch_name</replaceable></term>
+  <listitem>
+    <para>
+      The branch in the &git; repository the upstream sources are put
+      onto. If set to the empty value the branch will not be pushed.
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--upstream-tag=</option><replaceable>TAG-FORMAT</replaceable></term>
-	<listitem>
-	  <para>
-	    Use this tag format when looking for tags of upstream
-	    versions. Default
-	    is <replaceable>upstream/%(version)s</replaceable>.
-	    If set to the empty value the tag will not be pushed.
-	  </para>
-	</listitem>
+  <term><option>--upstream-tag=</option><replaceable>TAG-FORMAT</replaceable></term>
+  <listitem>
+    <para>
+      Use this tag format when looking for tags of upstream
+      versions. Default
+      is <replaceable>upstream/%(version)s</replaceable>.
+      If set to the empty value the tag will not be pushed.
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--pristine-tar</option></term>
-	<listitem>
-	  <para>Whether to update the pristine-tar branch too.</para>
-	</listitem>
+  <term><option>--pristine-tar</option></term>
+  <listitem>
+    <para>Whether to update the pristine-tar branch too.</para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><option>--dry-run</option></term>
-	<listitem>
-	  <para>
-	    Pass the <option>--dry-run</option> to &gitcmd; <option>push</option>. So don't
-	    push anything, only check if things are pushable.
-	  </para>
-	</listitem>
+  <term><option>--dry-run</option></term>
+  <listitem>
+    <para>
+      Pass the <option>--dry-run</option> to &gitcmd; <option>push</option>. So don't
+      push anything, only check if things are pushable.
+    </para>
+  </listitem>
       </varlistentry>
     </variablelist>
   </refsect1>

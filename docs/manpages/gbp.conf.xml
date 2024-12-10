@@ -19,55 +19,55 @@
   <refsynopsisdiv>
    <variablelist>
       <varlistentry>
-	<term>
-	  /etc/git-buildpackage/gbp.conf
-	</term>
-	<listitem>
-	  <para>
-	    system wide
-	  </para>
-	</listitem>
+  <term>
+    /etc/git-buildpackage/gbp.conf
+  </term>
+  <listitem>
+    <para>
+      system wide
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term>
-	  ~/.gbp.conf
-	</term>
-	<listitem>
-	  <para>
-	    per user
-	  </para>
-	</listitem>
+  <term>
+    ~/.gbp.conf
+  </term>
+  <listitem>
+    <para>
+      per user
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term>
-	  .gbp.conf
-	</term>
-	<listitem>
-	  <para>
-	    per branch, can be published with the repository
+  <term>
+    .gbp.conf
+  </term>
+  <listitem>
+    <para>
+      per branch, can be published with the repository
             (deprecated)
-	  </para>
-	</listitem>
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term>
-	  debian/gbp.conf
-	</term>
-	<listitem>
-	  <para>
-	    per branch, can be published with the repository
-	  </para>
-	</listitem>
+  <term>
+    debian/gbp.conf
+  </term>
+  <listitem>
+    <para>
+      per branch, can be published with the repository
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term>
-	  .git/gbp.conf
-	</term>
-	<listitem>
-	  <para>
-	    per repository
-	  </para>
-	</listitem>
+  <term>
+    .git/gbp.conf
+  </term>
+  <listitem>
+    <para>
+      per repository
+    </para>
+  </listitem>
       </varlistentry>
     </variablelist>
   </refsynopsisdiv>
@@ -196,17 +196,17 @@
     <refsect2>
       <title>Notes</title>
       <note>
-	<para>
-	  To see the current set of values that would be applied after parsing the
-	  configuration files, use <xref linkend="man.gbp.config"/>.
-	</para>
+  <para>
+    To see the current set of values that would be applied after parsing the
+    configuration files, use <xref linkend="man.gbp.config"/>.
+  </para>
       </note>
 
       <note>
-	<para>
-	  <command>gbp import-dscs</command> and <command>git-pbuilder</command>
-	  can't be configured via <filename>gbp.conf</filename>.
-	</para>
+  <para>
+    <command>gbp import-dscs</command> and <command>git-pbuilder</command>
+    can't be configured via <filename>gbp.conf</filename>.
+  </para>
       </note>
     </refsect2>
 
@@ -262,33 +262,33 @@
     </para>
     <variablelist>
       <varlistentry>
-	<term><envar>GBP_CONF_FILES</envar></term>
-	<listitem>
-	  <para>
-	    A colon separated list of configuration files to parse. If
+  <term><envar>GBP_CONF_FILES</envar></term>
+  <listitem>
+    <para>
+      A colon separated list of configuration files to parse. If
             unset or empty the default list of files is parsed (see above).
-	  </para>
-	</listitem>
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><envar>GBP_DISABLE_SECTION_DEPRECATION</envar></term>
-	<listitem>
-	  <para>
-	    When set to a non-empty value don't print a deprecation
-	    warning in case &gbp; encounters a section starting with
-	    <emphasis>git-</emphasis> or <emphasis>gbp-</emphasis>.
-	  </para>
-	</listitem>
+  <term><envar>GBP_DISABLE_SECTION_DEPRECATION</envar></term>
+  <listitem>
+    <para>
+      When set to a non-empty value don't print a deprecation
+      warning in case &gbp; encounters a section starting with
+      <emphasis>git-</emphasis> or <emphasis>gbp-</emphasis>.
+    </para>
+  </listitem>
       </varlistentry>
       <varlistentry>
-	<term><envar>GBP_DISABLE_GBP_CONF_DEPRECATION</envar></term>
-	<listitem>
-	  <para>
-	    When set to a non-empty value don't print a deprecation
-	    warning in case &gbp; encounters a configuration file in
-	    a deprecated location.
-	  </para>
-	</listitem>
+  <term><envar>GBP_DISABLE_GBP_CONF_DEPRECATION</envar></term>
+  <listitem>
+    <para>
+      When set to a non-empty value don't print a deprecation
+      warning in case &gbp; encounters a configuration file in
+      a deprecated location.
+    </para>
+  </listitem>
       </varlistentry>
     </variablelist>
   </refsect1>

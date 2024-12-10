@@ -50,7 +50,7 @@
       </listitem>
       <listitem>
         <para>
-	  Create a git tag using the information from <filename>debian/changelog</filename>.
+    Create a git tag using the information from <filename>debian/changelog</filename>.
         </para>
       </listitem>
       <listitem>

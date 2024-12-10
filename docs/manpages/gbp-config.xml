@@ -23,8 +23,8 @@
 
       &man.common.options.synopsis;
       <group choice='req'>
-	<arg choice="plain"><replaceable>command.option</replaceable></arg>
-	<arg choice="plain"><replaceable>command</replaceable></arg>
+  <arg choice="plain"><replaceable>command.option</replaceable></arg>
+  <arg choice="plain"><replaceable>command</replaceable></arg>
       </group>
     </cmdsynopsis>
   </refsynopsisdiv>
@@ -51,19 +51,19 @@
       <varlistentry>
         <term><option>0</option></term>
         <listitem>
-	  <para>Success.</para>
+    <para>Success.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>1</option></term>
         <listitem>
-	  <para>Failed to parse command line</para>
+    <para>Failed to parse command line</para>
         </listitem>
       </varlistentry>
       <varlistentry>
         <term><option>2</option></term>
         <listitem>
-	  <para>The value did not exist</para>
+    <para>The value did not exist</para>
         </listitem>
       </varlistentry>
     </variablelist>

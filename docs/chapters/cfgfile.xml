@@ -28,7 +28,7 @@
     <varlistentry>
       <term>[DEFAULT]</term>
       <listitem>
-	<para>Options in this section apply to all &gbp; commands.</para>
+  <para>Options in this section apply to all &gbp; commands.</para>
       </listitem>
     </varlistentry>
     <varlistentry>
@@ -111,16 +111,16 @@
       e.g. <option>export-dir</option> or
       <option>tarball-dir</option> and you prefer different locations:
       <programlisting>
-	$ cat &lt;&lt;EOF &gt;~/.gbp.late.conf
-	[DEFAULT]
-	export-dir = ../build-area
-	tarball-dir = ../tarballs
-	EOF
+  $ cat &lt;&lt;EOF &gt;~/.gbp.late.conf
+  [DEFAULT]
+  export-dir = ../build-area
+  tarball-dir = ../tarballs
+  EOF
 
-	$ export GBP_CONF_FILES=~/.gbp.conf:debian/gbp.conf:~/.gbp.late.conf
-	$ cd  &lt;mypkg&gt;
-	$ gbp config buildpackage.export-dir
-	../build-area
+  $ export GBP_CONF_FILES=~/.gbp.conf:debian/gbp.conf:~/.gbp.late.conf
+  $ cd  &lt;mypkg&gt;
+  $ gbp config buildpackage.export-dir
+  ../build-area
       </programlisting>
     </para>
     <para>
@@ -128,9 +128,9 @@
       <envar>GBP_CONF_FILES</envar> to a non existing location.  This way
       only default values and options from the command line will be used:
       <programlisting>
-	$ export GBP_CONFI_FILES=/does/not/exist
-	$ gbp config buildpackage.debian-branch
-	master
+  $ export GBP_CONFI_FILES=/does/not/exist
+  $ gbp config buildpackage.debian-branch
+  master
       </programlisting>
     </para>
   </sect1>

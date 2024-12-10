@@ -131,9 +131,9 @@
           version in the changelog. <replaceable>BRANCH</replaceable> looks at
           the upstream branch given via the
           <option>--upstream-branch</option> option.
-	  </para>
-	  <para>
-	  Other values are interpreted as treeishs.
+    </para>
+    <para>
+    Other values are interpreted as treeishs.
           </para>
           <para>
           This doesn't have any effect if <option>--pristine-tar</option>
