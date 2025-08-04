@@ -392,3 +392,22 @@ class TestImportDsc(ComponentTestBase):
             b"hello-debhelper_2.8.orig.tar.gz.id",
             b"hello-debhelper_2.8.orig.tar.gz.asc",
         }
+
+    def test_add_upstream_vcs_alias(self):
+        """Test that the old --add-upstream-vcs option still works as an alias"""
+
+        def _dsc_with_metadata(version):
+            return os.path.join(
+                DEB_TEST_DATA_DIR,
+                "dsc-3.0-with-upstream-metadata",
+                "hello_%s.dsc" % version,
+            )
+
+        dscfile = _dsc_with_metadata("2.10-1")
+        assert (
+            import_dsc(["arg0", "--verbose", "--add-upstream-vcs", dscfile])
+            == 0
+        )
+        repo = ComponentTestGitRepository("hello")
+        self._check_repo_state(repo, "master", ["master", "upstream"])
+        assert repo.has_remote_repo("upstreamvcs")

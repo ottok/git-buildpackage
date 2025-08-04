@@ -108,7 +108,7 @@ class GbpOptionParser(OptionParser):
     @type def_config_files: dict (type, path)
     """
     defaults = {'abbrev': 7,
-                'add-upstream-vcs': 'False',
+                'add-upstreamvcs': 'False', # Renamed from add-upstream-vcs
                 'aliases': 'True',
                 'allow-unauthenticated': 'False',
                 'arch': '',
@@ -202,9 +202,9 @@ class GbpOptionParser(OptionParser):
                 'urgency': 'medium',
                 }
     help = {
-        'add-upstream-vcs':
+        'add-upstreamvcs': # Renamed from add-upstream-vcs
             "Whether to add the upstream vcs as additional remote "
-            "default is '%(add-upstream-vcs)s'",
+            "default is '%(add-upstreamvcs)s'", # Updated reference
         'aliases':
             "Whether to expand gbp specific aliases like `salsa:`,"
             "default is '%(aliases)s'",
@@ -660,11 +660,28 @@ class GbpOptionParser(OptionParser):
 
     def get_opt_names(self, option_name):
         names = ["--%s%s" % (self.prefix, option_name)]
+        # Add alias for add-upstream-vcs (old name) if the primary is add-upstreamvcs (new name)
+        if option_name == 'add-upstreamvcs':
+            names.append("--%s%s" % (self.prefix, 'add-upstream-vcs'))
+        elif option_name == 'no-add-upstreamvcs':
+            names.append("--%s%s" % (self.prefix, 'no-add-upstream-vcs'))
         if option_name in self.short_opts:
             if self.prefix:
                 raise ValueError("Options with prefix cannot have a short option")
             names.insert(0, self.short_opts[option_name])
         return names
+
+    def _warn_deprecated_option(self, option_name):
+        """Warn about deprecated option names"""
+        deprecated_options = {
+            'add-upstream-vcs': 'add-upstreamvcs',
+            'no-add-upstream-vcs': 'no-add-upstreamvcs',
+            'upstream-vcs-tag': 'upstreamvcs-tag'
+        }
+        if option_name in deprecated_options:
+            import gbp.log
+            gbp.log.warn("Option '--%s' is deprecated, use '--%s' instead" %
+                         (option_name, deprecated_options[option_name]))
 
     @save_option
     def add_config_file_option(self, option_name, dest, help=None, **kwargs):
@@ -720,6 +737,25 @@ class GbpOptionParser(OptionParser):
         except OSError as e:
             if e.errno != errno.EPIPE:
                 raise
+
+    def parse_args(self, args=None, values=None):
+        """
+        Parse arguments and warn about deprecated options
+        """
+        if args is None:
+            args = sys.argv[1:]
+
+        for arg in args:
+            if arg.startswith('--'):
+                opt = arg.split('=', 1)[0][2:]
+                if self.prefix:
+                    if opt.startswith(self.prefix):
+                        opt = opt[len(self.prefix):]
+                    else:
+                        continue
+                self._warn_deprecated_option(opt)
+
+        return OptionParser.parse_args(self, args, values)
 
     @classmethod
     def _name_to_filename(cls, name):

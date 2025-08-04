@@ -150,7 +150,7 @@ def build_parser(name):
                                      "default is '%(postclone)s'")
     cmd_group.add_boolean_config_file_option(option_name="hooks", dest="hooks")
 
-    uvcs_group.add_boolean_config_file_option(option_name="add-upstream-vcs", dest='add_upstream_vcs')
+    uvcs_group.add_boolean_config_file_option(option_name="add-upstreamvcs", dest='add_upstream_vcs')
 
     parser.add_option("-v", "--verbose", action="store_true", dest="verbose", default=False,
                       help="verbose command execution")

@@ -33,7 +33,7 @@
       <arg><option>--repo-user=</option><option>[GIT|DEBIAN]</option></arg>
       <arg><option>--repo-email=</option><option>[GIT|DEBIAN]</option></arg>
       <arg><option>--[no-]aliases</option></arg>
-      <arg><option>--[no-]add-upstream-vcs</option></arg>
+      <arg><option>--[no-]add-upstreamvcs</option></arg>
       <arg choice="plain"><replaceable>repository</replaceable></arg>
       <arg><replaceable>directory</replaceable></arg>
     </cmdsynopsis>
@@ -182,13 +182,14 @@
         </listitem>
       </varlistentry>
       <varlistentry>
-        <term><option>--[no-]add-upstream-vcs</option>
+        <term><option>--[no-]add-upstreamvcs</option>
         </term>
         <listitem>
           <para>
 	    Whether to add the upstream git repository as additional remote. The repository url is read from
 	    the "Repository" field in
             <filename>debian/upstream/metadata</filename>.
+            The old option name <option>--[no-]add-upstream-vcs</option> is still supported as an alias.
           </para>
         </listitem>
       </varlistentry>
@@ -216,7 +217,7 @@
     <para>
       Clone the Debian packaging repository and the upstream repository in one go:
     </para>
-    <screen>&gbp-clone; -add-upstream-vcs vcs-git:entr</screen>
+    <screen>&gbp-clone; --add-upstreamvcs vcs-git:entr</screen>
     <para>
       The branches, tags and pristine-tar will be automatically setup correctly
       following the contents of debian/gbp.conf in the package, and there will

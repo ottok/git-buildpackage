@@ -26,6 +26,15 @@ __gbp_tag_format_options() {
 		"--${prefix}upstream-tag=-[format string for upstream tags]"
 }
 
+__gbp_upstreamvcs_options() {
+	local prefix="$1"
+	_arguments \
+		"--${prefix}add-upstreamvcs[Add the upstream vcs as additional remote]" \
+		"--${prefix}no-add-upstreamvcs[Do not add the upstream vcs as additional remote]" \
+		"--${prefix}add-upstream-vcs[DEPRECATED: Use --add-upstreamvcs instead]" \
+		"--${prefix}no-add-upstream-vcs[DEPRECATED: Use --no-add-upstreamvcs instead]"
+}
+
 __gbp_tag_sign_options() {
 	local prefix="$1"
 	_arguments \
@@ -114,6 +123,7 @@ _gbp-buildpackage() {
 _gbp-clone() {
 	__gbp_common_options
 	__gbp_branch_options
+	__gbp_upstreamvcs_options
 	_arguments \
 		'--all[Track all branches, not only debian and upstream]'
 }
