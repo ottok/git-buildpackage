@@ -33,7 +33,7 @@
       <arg><option>--skip-debian-tag</option></arg>
       <arg><option>--upstream-branch=</option><replaceable>branch_name</replaceable></arg>
       <arg><option>--upstream-tag=</option><replaceable>tag-format</replaceable></arg>
-      <arg><option>--upstream-vcs-tag=</option><replaceable>tag-format</replaceable></arg>
+      <arg><option>--upstreamvcs-tag=</option><replaceable>tag-format</replaceable></arg>
       <arg><option>--repo-user=</option><option>[GIT|DEBIAN]</option></arg>
       <arg><option>--repo-email=</option><option>[GIT|DEBIAN]</option></arg>
       <arg choice="plain"><replaceable>debian-source.dsc</replaceable></arg>
@@ -139,7 +139,7 @@
         </listitem>
       </varlistentry>
       <varlistentry>
-        <term><option>--upstream-vcs-tag</option>=<replaceable>tag-format</replaceable>
+        <term><option>--upstreamvcs-tag</option>=<replaceable>tag-format</replaceable>
         </term>
         <listitem>
           <para>
@@ -154,6 +154,9 @@
 	    parents since this requires additional setup to have the upstream
 	    sources in the same repository.
 	  </para>
+          <para>
+            The old option name <option>--upstream-vcs-tag</option> is still supported as an alias.
+          </para>
         </listitem>
       </varlistentry>
       <varlistentry>

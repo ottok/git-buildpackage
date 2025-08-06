@@ -198,7 +198,7 @@ class GbpOptionParser(OptionParser):
                 'upstream-branch': 'upstream',
                 'upstream-tag': 'upstream/%(version)s',
                 'upstream-tree': 'TAG',
-                'upstream-vcs-tag': '',
+                'upstreamvcs-tag': '',
                 'urgency': 'medium',
                 }
     help = {
@@ -394,9 +394,9 @@ class GbpOptionParser(OptionParser):
             "Set repo email from the DEBFULLNAME and DEBEMAIL "
             "environment variables ('DEBIAN') or fallback to the "
             "git configuration ('GIT'), default is '%(repo-email)s'",
-        'upstream-vcs-tag':
+        'upstreamvcs-tag':
             "Upstream VCS tag added to the merge commit, "
-            "default is '%(upstream-vcs-tag)s'",
+            "default is '%(upstreamvcs-tag)s'",
     }
 
     short_opts = {
@@ -663,8 +663,6 @@ class GbpOptionParser(OptionParser):
         # Add alias for add-upstream-vcs (old name) if the primary is add-upstreamvcs (new name)
         if option_name == 'add-upstreamvcs':
             names.append("--%s%s" % (self.prefix, 'add-upstream-vcs'))
-        elif option_name == 'no-add-upstreamvcs':
-            names.append("--%s%s" % (self.prefix, 'no-add-upstream-vcs'))
         if option_name in self.short_opts:
             if self.prefix:
                 raise ValueError("Options with prefix cannot have a short option")

@@ -155,9 +155,9 @@ def build_parser(name):
                                         dest="packaging_branch")
     branch_group.add_config_file_option(option_name="upstream-branch",
                                         dest="upstream_branch")
-    branch_group.add_option("--upstream-vcs-tag", dest="vcs_tag",
-                            help="Upstream VCS tag on top of which to import "
-                            "the orig sources")
+    branch_group.add_config_file_option(option_name="upstreamvcs-tag", dest="vcs_tag",
+                                        help="Upstream VCS tag added to the merge commit, "
+                                        "default is '%(upstreamvcs-tag)s'")
     branch_group.add_boolean_config_file_option(
         option_name="create-missing-branches",
         dest="create_missing_branches")

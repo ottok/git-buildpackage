@@ -34,7 +34,7 @@
       <arg><option>--[no-]sign-tags</option></arg>
       <arg><option>--upstream-branch=</option><replaceable>BRANCH-NAME</replaceable></arg>
       <arg><option>--upstream-tag=</option><replaceable>TAG-FORMAT</replaceable></arg>
-      <arg><option>--upstream-vcs-tag=</option><replaceable>TAG-FORMAT</replaceable></arg>
+      <arg><option>--upstreamvcs-tag=</option><replaceable>TAG-FORMAT</replaceable></arg>
       <arg><option>--native</option></arg>
       <arg><option>--repo-user=</option><option>[GIT|DEBIAN]</option></arg>
       <arg><option>--repo-email=</option><option>[GIT|DEBIAN]</option></arg>
@@ -148,7 +148,7 @@
         </listitem>
       </varlistentry>
       <varlistentry>
-        <term><option>--upstream-vcs-tag</option>=<replaceable>TAG-NAME</replaceable>
+        <term><option>--upstreamvcs-tag</option>=<replaceable>TAG-NAME</replaceable>
         </term>
         <listitem>
           <para>
@@ -157,6 +157,9 @@
           want to link to its revision history.
           <replaceable>TAG-FORMAT</replaceable> can be a pattern similar to
           what <option>--upstream-tag</option> supports.
+          </para>
+          <para>
+            The old option name <option>--upstream-vcs-tag</option> is still supported as an alias.
           </para>
         </listitem>
       </varlistentry>

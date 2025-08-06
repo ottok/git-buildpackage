@@ -385,11 +385,11 @@ upstream-tag = v%(version%.%_)s
 	<title>Upstream tarballs and linked upstream history</title>
 	<para>If you want to track upstream's &git; but continue to import the upstream tarballs,
 	  e.g. to make sure the tarball uploaded
-	  to &debian; has the same checksum as upstream's, you can use the <option>--upstream-vcs-tag</option> option
+	  to &debian; has the same checksum as upstream's, you can use the <option>--upstreamvcs-tag</option> option
 	  when importing new tarballs with &gbp-import-orig;. Assuming you have the upstream source in your
 	  repository with a tag <replaceable>v0.0.1</replaceable>, you can use:
 <programlisting>
-  &gbp-import-orig; --upstream-vcs-tag=v0.0.1 foo_0.0.1.orig.tar.gz
+  &gbp-import-orig; --upstreamvcs-tag=v0.0.1 foo_0.0.1.orig.tar.gz
 </programlisting>
 	  to add upstream's tag as additional parent to the merge commit.
 	  See <ulink url="http://bugs.debian.org/664771">#664771</ulink> for more details.
@@ -496,7 +496,7 @@ upstream-tag = v%(version%.%_)s
       <tip><para>
       Using upstream tarballs is recommended as it allows signature verification
       of the tarballs. If upstream uses git and tags their releases, it is recommended to
-      also use &gbp-import-orig;'s <option>--upstream-vcs-tag</option> to have a
+      also use &gbp-import-orig;'s <option>--upstreamvcs-tag</option> to have a
       fully traceable path from upstream git tag, to tarball contents, to what
       was imported into Debian. As this brings the upstream development history into the
       packaging repository it also makes cherry picking upstream commits simple.

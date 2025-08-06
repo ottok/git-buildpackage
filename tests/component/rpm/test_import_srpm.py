@@ -346,13 +346,42 @@ class TestImportPacked(ComponentTestBase):
         assert (
             mock_import(
                 [
-                    "--upstream-vcs-tag=foo/%(version)s",
+                    "--upstreamvcs-tag=foo/%(version)s",
                     "--upstream-branch=orig",
                     "--packaging-branch=pack",
                     srpm,
                 ]
             ) == 0
         )
+        
+        # Test the old option name still works
+        assert (
+            mock_import(
+                [
+                    "--upstream-vcs-tag=bar/%(version)s",
+                    "--upstream-branch=orig",
+                    "--packaging-branch=pack",
+                    srpm,
+                ]
+            ) == 0
+        )
+        
+        # Test that both old and new option names can be used together
+        # The last one specified should take precedence
+        assert (
+            mock_import(
+                [
+                    "--upstream-vcs-tag=old/%(version)s",
+                    "--upstreamvcs-tag=new/%(version)s",
+                    "--upstream-branch=orig",
+                    "--packaging-branch=pack",
+                    srpm,
+                ]
+            ) == 0
+        )
+        # Verify the tag from the last option was used
+        parents = repo.get_commits(until="orig", num=1, options="--format=%P")[0].split()
+        assert len(parents) == 2
         parents = repo.get_commits(until="orig", num=1, options="--format=%P")[0].split()
         assert len(parents) == 2
         assert commit in parents

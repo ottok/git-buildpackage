@@ -341,7 +341,7 @@ def build_parser(name):
                                         dest="upstream_branch")
     branch_group.add_boolean_config_file_option(option_name="create-missing-branches",
                                                 dest="create_missing_branches")
-    branch_group.add_config_file_option(option_name="upstream-vcs-tag", dest="vcs_tag")
+    branch_group.add_config_file_option(option_name="upstreamvcs-tag", dest="vcs_tag")
 
     tag_group.add_boolean_config_file_option(option_name="sign-tags",
                                              dest="sign_tags")

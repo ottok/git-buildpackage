@@ -23,7 +23,9 @@ __gbp_tag_format_options() {
 	local prefix="$1"
 	_arguments \
 		"--${prefix}debian-tag=-[format string for debian tags]" \
-		"--${prefix}upstream-tag=-[format string for upstream tags]"
+		"--${prefix}upstream-tag=-[format string for upstream tags]" \
+		"--${prefix}upstreamvcs-tag=-[Add a tag as an additional parent to the upstream tarball commit]" \
+		"--${prefix}upstream-vcs-tag=-[DEPRECATED: Use --upstreamvcs-tag instead]"
 }
 
 __gbp_upstreamvcs_options() {
@@ -212,7 +214,8 @@ _gbp-import-orig() {
 	_arguments \
 		'(--upstream-version -u)'{--upstream-version,-u}'=[The upstream version number]' \
 		'--merge[Merge the upstream branch into the debian branch]' \
-		'--upstream-vcs-tag=-[Add a tag as an additional parent to the upstream tarball commit]' \
+		'--upstreamvcs-tag=-[Add a tag as an additional parent to the upstream tarball commit]' \
+		'--upstream-vcs-tag=-[DEPRECATED: Use --upstreamvcs-tag instead]' \
 		'--import-msg=-[Commit message format string]' \
 		'--filter=-[Filter out files]' \
 		'--filter-pristine-tar[When filtering also filter out of pristine-tar tarballs]' \
@@ -455,7 +458,8 @@ _gbp-import-orig() {
 	_arguments \
 		'(--upstream-version -u)'{--upstream-version,-u}'=[The upstream version number]' \
 		'--merge[Merge the upstream branch into the debian branch]' \
-		'--upstream-vcs-tag=-[Add a tag as an additional parent to the upstream tarball commit]' \
+		'--upstreamvcs-tag=-[Add a tag as an additional parent to the upstream tarball commit]' \
+		'--upstream-vcs-tag=-[DEPRECATED: Use --upstreamvcs-tag instead]' \
 		'--import-msg=-[Commit message format string]' \
 		'--filter=-[Filter out files]' \
 		'--filter-pristine-tar[When filtering also filter out of pristine-tar tarballs]' \

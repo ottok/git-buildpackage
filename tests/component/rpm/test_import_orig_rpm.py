@@ -235,7 +235,7 @@ class TestImportOrig(ImportOrigTestBase):
         base_args = ['--debian-branch=pack', '--upstream-branch=orig',
                      '--upstream-tag=orig/%(version)s', '--merge']
         # Fake version to be 0.9
-        extra_args = ['-u0.9', '--upstream-vcs-tag=upstream/0.8', orig]
+        extra_args = ['-u0.9', '--upstreamvcs-tag=upstream/0.8', orig]
         assert mock_import(base_args + extra_args) == 0
         # Check repository state
         files = ["dummy.sh", "packaging/gbp-test-native.spec", ".gbp.conf", "Makefile", "README"]
@@ -244,6 +244,53 @@ class TestImportOrig(ImportOrigTestBase):
         # Check tags
         tags = repo.get_tags()
         assert set(tags) == set(["upstream/0.8", "orig/0.9"])
+
+        # Test the old option name (--upstream-vcs-tag) still works
+        orig = os.path.join(DATA_DIR, "gbp-test-native-1.0.zip")
+        base_args = [
+            "--debian-branch=pack",
+            "--upstream-branch=orig",
+            "--upstream-tag=orig/%(version)s",
+            "--merge",
+        ]
+        # Fake version to be 1.0
+        extra_args = ["-u1.0", "--upstream-vcs-tag=upstream/0.9", orig]
+        assert mock_import(base_args + extra_args) == 0
+        # Check tags
+        tags = repo.get_tags()
+        assert set(tags) == set(
+            ["upstream/0.8", "upstream/0.9", "orig/0.9", "orig/1.0"]
+        )
+
+        # Verify that both old and new option names work in the same command
+        # This ensures the alias mechanism properly handles both options together
+        orig = os.path.join(DATA_DIR, "gbp-test-native-1.0.zip")
+        base_args = [
+            "--debian-branch=pack",
+            "--upstream-branch=orig",
+            "--upstream-tag=orig/%(version)s",
+            "--merge",
+        ]
+        # Fake version to be 1.1 - the last option should take precedence
+        extra_args = [
+            "-u1.1",
+            "--upstream-vcs-tag=upstream/1.0",
+            "--upstreamvcs-tag=upstream/1.1",
+            orig,
+        ]
+        assert mock_import(base_args + extra_args) == 0
+        # Check tags - should have the tag from the last option (upstream/1.1)
+        tags = repo.get_tags()
+        assert set(tags) == set(
+            [
+                "upstream/0.8",
+                "upstream/0.9",
+                "upstream/1.1",
+                "orig/0.9",
+                "orig/1.0",
+                "orig/1.1",
+            ]
+        )
 
         # Change to packaging branch and create new commit
         repo.set_branch('pack')
