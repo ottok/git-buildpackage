@@ -33,7 +33,7 @@ _gbp_options ()
 {
     GBP_DISABLE_GBP_CONF_DEPRECATION=true \
     GBP_DISABLE_SECTION_DEPRECATION=true \
-        gbp "${1}" --help | sed -ne 's/^ \+\(\(\-[a-z]\), \)\?\(\-\-[a-z\-]\+\=\?\).*/\2 \3/p'
+        gbp "${1}" --help | sed -ne 's/  \+.*$//;s/^\s*//;s/, / /g;p'
 }
 
 
